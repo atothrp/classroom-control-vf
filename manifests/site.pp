@@ -58,6 +58,7 @@ node default {
   node "puppetpirate.puppetlabs.vm" {
   include examples::fundamentals
   include users
+  include skeleton
 
     exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
 path => '/usr/bin:/usr/local/bin',
