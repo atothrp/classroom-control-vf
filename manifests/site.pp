@@ -42,7 +42,7 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include users
+  
   notify { "Hello, my name is ${::hostname}": }
   notify { "Hello Joe":}
   file { 'motd':
@@ -53,6 +53,12 @@ node default {
     mode    => '0664',
     content => "Isn't this fun?\n",
     }
+    
+  }  
+  node "puppetpirate.puppetlabs.vm" {
+  include examples::fundamentals
+  include users
+
     exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
 path => '/usr/bin:/usr/local/bin',
 creates => '/etc/motd',
