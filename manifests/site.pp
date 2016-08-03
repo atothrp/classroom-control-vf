@@ -54,11 +54,11 @@ node default {
     content => "Isn't this fun?\n",
     }
     
-  }  
-  node "atothrp.puppetlabs.vm" {
-  include examples::fundamentals
-  include users
-  include skeleton
+  #}
+  #node "atothrp.puppetlabs.vm" {
+  #include examples::fundamentals
+  #include users
+  #include skeleton
 
     exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
 path => '/usr/bin:/usr/local/bin',
