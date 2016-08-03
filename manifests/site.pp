@@ -55,7 +55,7 @@ node default {
     }
     
   }  
-  node "puppetpirate.puppetlabs.vm" {
+  node "atothrp.puppetlabs.vm" {
   include examples::fundamentals
   include users
   include skeleton
