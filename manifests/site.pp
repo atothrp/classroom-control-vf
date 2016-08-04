@@ -61,6 +61,9 @@ node default {
   #include skeleton
    include memcached
    include nginx
+   $virt_cap = capitalize($::virtual)
+  notify { "This host is a virtual ${virt_cap} host.\n": }
+  
     exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
 path => '/usr/bin:/usr/local/bin',
 creates => '/etc/motd',
