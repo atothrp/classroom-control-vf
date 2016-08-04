@@ -61,6 +61,7 @@ node default {
   #include skeleton
    include memcached
    include nginx
+   inlcude aliases
    $virt_cap = capitalize($::virtual)
   notify { "This host is a virtual ${virt_cap} host.\n": }
   
