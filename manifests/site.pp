@@ -55,13 +55,16 @@ node default {
     }
     
   #}
-  #node "atothrp.puppetlabs.vm" {
-  #include examples::fundamentals
+  node "atothrp.puppetlabs.vm" {
+  include examples::fundamentals
   #include users
   #include skeleton
    include memcached
    include nginx
-   inlcude aliases
+   class { 'aliases':
+    root => 'fundamentals',
+  }
+  
    $virt_cap = capitalize($::virtual)
   notify { "This host is a virtual ${virt_cap} host.\n": }
   
